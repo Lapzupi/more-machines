@@ -1,8 +1,8 @@
 import org.gradle.configurationcache.extensions.capitalized
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
-group = "com.example" // TODO: Change this to your group
-version = "1.0-SNAPSHOT" // TODO: Change this to your addon version
+group = "com.lapzupi.dev"
+version = "0.1.0"
 
 val mojangMapped = project.hasProperty("mojang-mapped") || System.getProperty("mojang-mapped") != null
 
@@ -30,9 +30,9 @@ addon {
     name.set(project.name.capitalized())
     version.set(project.version.toString())
     novaVersion.set(libs.versions.nova)
-    main.set("com.example.ExampleAddon") // TODO: Change this to your main class
-    
-    // authors.add("ExampleAuthor") TODO: Set your list of authors
+    main.set("com.lapzupi.dev.MoreMachinesAddon")
+    authors.add("sarhatabaot")
+    softdepend.add("logistics")
     // spigotResourceId.set(12345) TODO: Set your spigot resource id
 }
 
@@ -45,9 +45,7 @@ spigotRemap {
 remapStrings {
     remapGoal.set(if (mojangMapped) "mojang" else "spigot")
     spigotVersion.set(libs.versions.spigot.get())
-    classes.set(listOf(
-        // Put your classes to string-remap here
-    ))
+    classes.set(emptyList())
 }
 
 tasks {

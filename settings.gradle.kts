@@ -1,9 +1,9 @@
-rootProject.name = "example" // TODO: Change this to your addon id
+rootProject.name = "more-machines"
 
 dependencyResolutionManagement {
     versionCatalogs {
         create("libs") {
-            version("nova", "0.12.7")
+            version("nova", "0.12.10")
             version("spigot", "1.19.3-R0.1-SNAPSHOT")
             
             library("nova", "xyz.xenondevs.nova", "nova").versionRef("nova")
