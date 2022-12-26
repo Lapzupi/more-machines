@@ -1,0 +1,30 @@
+{
+  "electric_composter": {
+    "item": "block/electric_composter",
+    "block": {
+      "type": "solid",
+      "directions": "nesw"
+    }
+  },
+  "recycler": {
+    "item": "block/recycler",
+    "block": {
+      "type": "solid",
+      "directions": "nesw"
+    }
+  },
+  "auto_crafter": {
+    "item": "block/auto_crafter",
+    "block": {
+      "type": "solid",
+      "directions": "neswupd"
+    }
+  },
+  "blueprint_crafter": {
+    "item": "block/blueprint_crafter",
+    "block": {
+      "type": "solid",
+      "directions": "news"
+    }
+  }
+}
