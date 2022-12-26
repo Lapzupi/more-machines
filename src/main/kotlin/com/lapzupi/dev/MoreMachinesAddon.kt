@@ -1,8 +1,8 @@
-package com.example
+package com.lapzupi.dev
 
 import xyz.xenondevs.nova.addon.Addon
 
-object ExampleAddon : Addon() {
+object MoreMachinesAddon : Addon() {
     
     override fun init() {
         // Called when the addon is initialized.
