@@ -1,6 +1,6 @@
 {
   "parent": "machines:block/machine",
   "textures": {
-    "front": "more-machines:block/electric_composter_front_on"
+    "front": "moremachines:block/electric_composter_front_on"
   }
 }

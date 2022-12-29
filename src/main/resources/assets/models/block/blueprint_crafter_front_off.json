@@ -1,0 +1,6 @@
+{
+  "parent": "machines:block/machine",
+  "textures": {
+    "front": "moremachines:block/blueprint_crafter_front_off"
+  }
+}

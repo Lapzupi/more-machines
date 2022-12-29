@@ -1,3 +1,7 @@
 {
-
+  "block.moremachines.auto_crafter": "Auto Crafter",
+  "block.moremachines.recycler": "Recycler",
+  "block.moremachines.electric_composter": "Electric Composter",
+  "block.moremachines.blueprint-crafter": "Blueprint Crafter",
+  "menu.moremachines.blocks.category.moremachines": "More Machines"
 }

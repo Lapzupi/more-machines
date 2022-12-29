@@ -27,12 +27,12 @@ dependencies {
 
 addon {
     id.set(project.name)
-    name.set(project.name.capitalized())
+    name.set(project.name)
     version.set(project.version.toString())
     novaVersion.set(libs.versions.nova)
     main.set("com.lapzupi.dev.MoreMachinesAddon")
     authors.add("sarhatabaot")
-    softdepend.add("logistics")
+    depend.add("logistics")
     // spigotResourceId.set(12345) TODO: Set your spigot resource id
 }
 

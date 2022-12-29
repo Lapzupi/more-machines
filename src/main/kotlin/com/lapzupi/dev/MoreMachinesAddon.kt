@@ -1,20 +1,18 @@
 package com.lapzupi.dev
 
+import com.lapzupi.dev.registry.Blocks
+import com.lapzupi.dev.registry.RecipeTypes
 import xyz.xenondevs.nova.addon.Addon
 
 object MoreMachinesAddon : Addon() {
-    
+
     override fun init() {
-        // Called when the addon is initialized.
-        // Register NovaMaterials, RecipeTypes, etc. here
+        Blocks.init()
+        RecipeTypes.init()
     }
     
-    override fun onEnable() {
-        // Called when the addon is enabled.
-    }
+    override fun onEnable() = Unit
     
-    override fun onDisable() {
-        // Called when the addon is disabled.
-    }
+    override fun onDisable() = Unit
     
 }

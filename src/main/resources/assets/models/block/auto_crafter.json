@@ -1,0 +1,10 @@
+{
+  "parent": "machines:block/machine",
+  "textures": {
+    "top": "moremachines:block/auto_crafter_top",
+    "north": "moremachines:block/auto_crafter_side_2",
+    "south": "moremachines:block/auto_crafter_side_1",
+    "east": "moremachines:block/auto_crafter_side_2",
+    "west": "moremachines:block/auto_crafter_side_1"
+  }
+}

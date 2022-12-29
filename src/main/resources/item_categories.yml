@@ -1,0 +1,9 @@
+more-machines_category:
+  icon: moremachines:recycler
+  name: "menu.moremachines.blocks.category.more-machines"
+  priority: 0
+  items:
+    - moremachines:recycler
+    - moremachines:blueprint_crafter
+    - moremachines:electric_composter
+    - moremachines:auto_crafter
