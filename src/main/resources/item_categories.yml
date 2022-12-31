@@ -1,6 +1,6 @@
 more-machines_category:
   icon: moremachines:recycler
-  name: "menu.moremachines.blocks.category.more-machines"
+  name: "menu.moremachines.blocks.category.moremachines"
   priority: 0
   items:
     - moremachines:recycler

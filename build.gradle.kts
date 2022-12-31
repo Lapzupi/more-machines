@@ -2,7 +2,7 @@ import org.gradle.configurationcache.extensions.capitalized
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 group = "com.lapzupi.dev"
-version = "0.1.0"
+version = "0.0.1"
 
 val mojangMapped = project.hasProperty("mojang-mapped") || System.getProperty("mojang-mapped") != null
 
@@ -32,6 +32,7 @@ addon {
     novaVersion.set(libs.versions.nova)
     main.set("com.lapzupi.dev.MoreMachinesAddon")
     authors.add("sarhatabaot")
+    depend.add("machines")
     depend.add("logistics")
     // spigotResourceId.set(12345) TODO: Set your spigot resource id
 }

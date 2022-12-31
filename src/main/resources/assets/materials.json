@@ -1,30 +1,48 @@
 {
   "electric_composter": {
-    "item": "block/electric_composter",
+    "item": "block/electric_composter_front_off",
     "block": {
       "type": "solid",
-      "directions": "nesw"
+      "directions": "nesw",
+      "models": [
+        "block/electric_composter_front_off",
+        "block/electric_composter_front_on"
+      ]
     }
   },
   "recycler": {
-    "item": "block/recycler",
+    "item": "block/recycler_front_off",
     "block": {
       "type": "solid",
-      "directions": "nesw"
+      "directions": "nesw",
+      "models": [
+        "block/recycler_front_off",
+        "block/recycler_front_on"
+      ]
     }
   },
   "auto_crafter": {
     "item": "block/auto_crafter",
     "block": {
       "type": "solid",
-      "directions": "neswupd"
+      "directions": "nesw",
+      "models": [
+        "block/auto_crafter_side_1",
+        "block/auto_crafter_side_2",
+        "block/auto_crafter_top"
+      ]
     }
   },
   "blueprint_crafter": {
-    "item": "block/blueprint_crafter",
+    "item": "block/blueprint_crafter_front_off",
     "block": {
       "type": "solid",
-      "directions": "news"
+      "directions": "nesw",
+      "models": [
+        "block/blueprint_crafter_front_off",
+        "block/blueprint_crafter_front_on",
+        "block/blueprint_crafter_side"
+      ]
     }
   }
 }

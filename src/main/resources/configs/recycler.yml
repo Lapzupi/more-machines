@@ -1,0 +1,4 @@
+capacity: 10000
+energy_per_tick: 50
+recycler_time: 200
+speed: 1
