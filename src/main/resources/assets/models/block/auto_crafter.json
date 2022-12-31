@@ -1,5 +1,4 @@
 {
-  "parent": "machines:block/machine",
   "textures": {
     "top": "moremachines:block/auto_crafter_top",
     "north": "moremachines:block/auto_crafter_side_2",

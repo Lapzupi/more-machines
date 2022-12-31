@@ -1,0 +1,14 @@
+{
+  "result": "moremachines:electric_composter",
+  "shape": [
+    "igi",
+    "gcg",
+    "imi"
+  ],
+  "ingredients": {
+    "c": "minecraft:composter",
+    "m": "machines:basic_machine_frame",
+    "i": "minecraft:iron_ingot",
+    "g": "machines:iron_gear"
+  }
+}

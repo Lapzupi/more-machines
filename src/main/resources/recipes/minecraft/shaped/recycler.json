@@ -1,0 +1,14 @@
+{
+  "result": "moremachines:recycler",
+  "shape": [
+    "igi",
+    "gmg",
+    "ihi"
+  ],
+  "ingredients": {
+    "m": "machines:basic_machine_frame",
+    "i": "minecraft:iron_ingot",
+    "g": "machines:iron_gear",
+    "h": "minecraft:oak_sapling"
+  }
+}

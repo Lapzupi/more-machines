@@ -46,6 +46,7 @@ class Recycler (blockState: NovaTileEntityState) : NetworkedTileEntity(blockStat
     override val upgradeHolder = getUpgradeHolder(UpgradeType.SPEED, UpgradeType.EFFICIENCY, UpgradeType.ENERGY)
     override val energyHolder = ConsumerEnergyHolder(this, MAX_ENERGY, ENERGY_PER_TICK, null, upgradeHolder) { createSideConfig(
         NetworkConnectionType.INSERT, BlockSide.FRONT) }
+
     override val itemHolder = NovaItemHolder(
         this,
         inputInv to NetworkConnectionType.BUFFER,
