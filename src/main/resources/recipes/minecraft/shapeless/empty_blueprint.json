@@ -1,3 +1,7 @@
 {
-  "result": "moremachines:empty_blueprint"
+  "result": "moremachines:empty_blueprint",
+  "ingredients": {
+    "machines:iron_plate": 1,
+    "minecraft:empty_map": 1
+  }
 }
