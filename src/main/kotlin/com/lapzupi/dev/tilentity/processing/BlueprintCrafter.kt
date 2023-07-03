@@ -13,8 +13,6 @@ import xyz.xenondevs.nova.tileentity.upgrade.UpgradeHolder
  */
 class BlueprintCrafter(blockState: NovaTileEntityState) : NetworkedTileEntity(blockState), Upgradable {
     private var timeLeft = retrieveData("blueprintCrafterTime") { 0 }
-    override val gui: Lazy<TileEntityGUI>?
-        get() = TODO("Not yet implemented")
 
     override val upgradeHolder: UpgradeHolder
         get() = TODO("Not yet implemented")
