@@ -27,6 +27,7 @@ addon {
     authors.add("sarhatabaot")
     depend.add("machines")
     depend.add("logistics")
+    depend.add("simple-upgrades")
     // spigotResourceId.set(12345) TODO: Set your spigot resource id
 }
 
