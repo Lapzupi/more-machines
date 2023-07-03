@@ -1,22 +1,24 @@
 rootProject.name = "moremachines"
 
 dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        mavenLocal { content { includeGroup("org.spigotmc") } }
+        mavenCentral()
+        maven("https://libraries.minecraft.net")
+        maven("https://repo.xenondevs.xyz/releases")
+    }
     versionCatalogs {
         create("libs") {
-            version("nova", "0.12.11")
-//            version("spigot-api", "1.19.3-R0.1-SNAPSHOT")
-            version("spigot", "1.19.3-R0.1-SNAPSHOT")
-            
-            library("nova", "xyz.xenondevs.nova", "nova").versionRef("nova")
-            library("spigot", "org.spigotmc", "spigot").versionRef("spigot")
+            from("xyz.xenondevs.nova:catalog:0.14.2")
         }
     }
 }
 
 pluginManagement {
     repositories {
+        mavenLocal { content { includeGroup("org.spigotmc") } }
         mavenCentral()
         maven("https://repo.xenondevs.xyz/releases")
-        mavenLocal { content { includeGroup("org.spigotmc") } }
     }
 }

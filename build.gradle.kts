@@ -4,25 +4,18 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 group = "com.lapzupi.dev"
 version = "0.0.6"
 
-val mojangMapped = project.hasProperty("mojang-mapped") || System.getProperty("mojang-mapped") != null
 
-@Suppress("DSL_SCOPE_VIOLATION")
+val mojangMapped = project.hasProperty("mojang-mapped")
+
 plugins {
-    kotlin("jvm") version "1.7.21"
-    id("xyz.xenondevs.specialsource-gradle-plugin") version "1.0.0"
-    id("xyz.xenondevs.string-remapper-gradle-plugin") version "1.0.0"
-    id("xyz.xenondevs.nova.nova-gradle-plugin") version libs.versions.nova
-}
-
-repositories {
-    mavenCentral()
-    maven("https://repo.xenondevs.xyz/releases")
-    mavenLocal { content { includeGroup("org.spigotmc") } }
+    alias(libs.plugins.kotlin)
+    alias(libs.plugins.nova)
+    alias(libs.plugins.stringremapper)
+    alias(libs.plugins.specialsource)
 }
 
 dependencies {
     implementation(libs.nova)
-    implementation(variantOf(libs.spigot) { classifier("remapped-mojang") })
 }
 
 addon {
@@ -40,13 +33,11 @@ addon {
 spigotRemap {
     spigotVersion.set(libs.versions.spigot.get().substringBefore('-'))
     sourceJarTask.set(tasks.jar)
-    spigotJarClassifier.set("")
 }
 
 remapStrings {
     remapGoal.set(if (mojangMapped) "mojang" else "spigot")
     spigotVersion.set(libs.versions.spigot.get())
-    classes.set(emptyList())
 }
 
 tasks {
@@ -54,14 +45,11 @@ tasks {
         group = "build"
         dependsOn("addon", if (mojangMapped) "jar" else "remapObfToSpigot")
         
-        from(File(File(project.buildDir, "libs"), "${project.name}-${project.version}.jar"))
-        into(
-            (project.findProperty("outDir") as? String)?.let(::File)
-                ?: System.getProperty("outDir")?.let(::File)
-                ?: project.buildDir
-        )
-        rename(String::capitalized)
+        from(File(project.buildDir, "libs/${project.name}-${project.version}.jar"))
+        into((project.findProperty("outDir") as? String)?.let(::File) ?: project.buildDir)
+        rename { it.replace(project.name, addon.get().addonName.get()) }
     }
+    
     withType<KotlinCompile> {
         kotlinOptions {
             jvmTarget = "17"

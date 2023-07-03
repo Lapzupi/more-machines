@@ -8,7 +8,7 @@ import xyz.xenondevs.nova.tileentity.upgrade.UpgradeHolder
 
 class AutoCrafter  (blockState: NovaTileEntityState) : NetworkedTileEntity(blockState), Upgradable {
     private var timeLeft = retrieveData("autoCrafterTime") { 0 }
-    override val gui: Lazy<TileEntityGUI>?
+    override val gui: Lazy<TileEntityGUI>
         get() = TODO("Not yet implemented")
     override val upgradeHolder: UpgradeHolder
         get() = TODO("Not yet implemented")
