@@ -41,5 +41,6 @@
         "block/blueprint_crafter_on"
       ]
     }
-  }
+  },
+  "blueprint_empty": "item/empty_blueprint"
 }
