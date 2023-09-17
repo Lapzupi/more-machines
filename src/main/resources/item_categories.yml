@@ -7,3 +7,9 @@ more-machines_category:
     - moremachines:blueprint_crafter
     - moremachines:electric_composter
     - moremachines:auto_crafter
+more-machines_items:
+  icon: moremachines:blueprint_empty
+  name: "menu.moremachines.items.category.moremachines"
+  priority: 1
+  items:
+    - moremachines:blueprint_empty

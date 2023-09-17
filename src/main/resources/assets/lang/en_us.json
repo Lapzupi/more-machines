@@ -3,5 +3,6 @@
   "block.moremachines.recycler": "Recycler",
   "block.moremachines.electric_composter": "Electric Composter",
   "block.moremachines.blueprint_crafter": "Blueprint Crafter",
-  "menu.moremachines.blocks.category.moremachines": "More Machines"
+  "menu.moremachines.blocks.category.moremachines": "More Machines Machines",
+  "menu.moremachines.items.category.moremachines": "More Machines Item"
 }
