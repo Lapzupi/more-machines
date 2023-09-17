@@ -10,7 +10,10 @@ dependencyResolutionManagement {
     }
     versionCatalogs {
         create("libs") {
-            from("xyz.xenondevs.nova:catalog:0.14.2")
+            val novaVersion = "0.14.10"
+            from("xyz.xenondevs.nova:catalog:$novaVersion")
+            
+            library("nova-api", "xyz.xenondevs.nova:nova-api:$novaVersion")
         }
     }
 }

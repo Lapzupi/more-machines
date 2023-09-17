@@ -16,4 +16,9 @@ object Items: ItemRegistry by MoreMachinesAddon.registry {
     val FILLED_BLUEPRINT = registerItem("filled_blueprint")
 
     //Fertilizer types, we should be able to create different fertilizer types through different items combinations..
+    
+    val BLUEPRINT_CRAFTER = registerItem(Blocks.BLUEPRINT_CRAFTER)
+    val AUTO_CRAFTER = registerItem(Blocks.AUTO_CRAFTER)
+    val ELECTRICAL_COMPOSTER = registerItem(Blocks.ELECTRIC_COMPOSTER)
+    val RECYCLER = registerItem(Blocks.RECYCLER)
 }

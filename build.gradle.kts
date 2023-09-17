@@ -16,6 +16,7 @@ plugins {
 
 dependencies {
     implementation(libs.nova)
+    implementation(libs.nova.api)
 }
 
 addon {
@@ -28,7 +29,6 @@ addon {
     depend.add("machines")
     depend.add("logistics")
     depend.add("simple-upgrades")
-    // spigotResourceId.set(12345) TODO: Set your spigot resource id
 }
 
 spigotRemap {
