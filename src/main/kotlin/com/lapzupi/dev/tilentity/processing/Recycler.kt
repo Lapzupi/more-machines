@@ -4,17 +4,13 @@ import com.lapzupi.dev.recipe.recycler.RecyclerRecipe
 import com.lapzupi.dev.registry.Blocks.RECYCLER
 import com.lapzupi.dev.registry.GUIMaterials
 import com.lapzupi.dev.registry.RecipeTypes
-import de.studiocode.invui.gui.GUI
-import de.studiocode.invui.gui.SlotElement
-import de.studiocode.invui.gui.builder.GUIBuilder
-import de.studiocode.invui.gui.builder.guitype.GUIType
-import de.studiocode.invui.virtualinventory.event.ItemUpdateEvent
 import org.bukkit.NamespacedKey
+import xyz.xenondevs.invui.gui.Gui
+import xyz.xenondevs.invui.gui.SlotElement
 import xyz.xenondevs.nova.data.config.NovaConfig
 import xyz.xenondevs.nova.data.config.configReloadable
 import xyz.xenondevs.nova.data.recipe.RecipeManager
 import xyz.xenondevs.nova.data.world.block.state.NovaTileEntityState
-import xyz.xenondevs.nova.material.ItemNovaMaterial
 import xyz.xenondevs.nova.tileentity.NetworkedTileEntity
 import xyz.xenondevs.nova.tileentity.network.NetworkConnectionType
 import xyz.xenondevs.nova.tileentity.network.energy.holder.ConsumerEnergyHolder
@@ -24,12 +20,9 @@ import xyz.xenondevs.nova.tileentity.upgrade.UpgradeType
 import xyz.xenondevs.nova.ui.EnergyBar
 import xyz.xenondevs.nova.ui.OpenUpgradesItem
 import xyz.xenondevs.nova.ui.config.side.OpenSideConfigItem
-import xyz.xenondevs.nova.ui.config.side.SideConfigGUI
 import xyz.xenondevs.nova.ui.item.ProgressItem
 import xyz.xenondevs.nova.util.BlockSide
 import xyz.xenondevs.nova.util.advance
-import xyz.xenondevs.nova.util.particle
-import xyz.xenondevs.particle.ParticleEffect
 import kotlin.math.max
 
 private val MAX_ENERGY = configReloadable { NovaConfig[RECYCLER].getLong("capacity") }
@@ -44,8 +37,13 @@ class Recycler (blockState: NovaTileEntityState) : NetworkedTileEntity(blockStat
     private val outputInv = getInventory("output", 2, ::handleOutputUpdate)
 
     override val upgradeHolder = getUpgradeHolder(UpgradeType.SPEED, UpgradeType.EFFICIENCY, UpgradeType.ENERGY)
-    override val energyHolder = ConsumerEnergyHolder(this, MAX_ENERGY, ENERGY_PER_TICK, null, upgradeHolder) { createSideConfig(
-        NetworkConnectionType.INSERT, BlockSide.FRONT) }
+    override val energyHolder = ConsumerEnergyHolder(
+        this,
+        MAX_ENERGY,
+        ENERGY_PER_TICK,
+        null,
+        upgradeHolder
+    ) { createSideConfig(NetworkConnectionType.INSERT, BlockSide.FRONT) }
 
     override val itemHolder = NovaItemHolder(
         this,
@@ -111,7 +109,7 @@ class Recycler (blockState: NovaTileEntityState) : NetworkedTileEntity(blockStat
         }
     }
 
-    inner class RecyclerGUI: TileEntityGUI() {
+    inner class RecyclerGUI: TileEntityGui() {
         private val mainProgress = ProgressItem(GUIMaterials.ARROW_PROGRESS as ItemNovaMaterial, 16)
 
         private val sideConfigGUI = SideConfigGUI(
@@ -123,7 +121,7 @@ class Recycler (blockState: NovaTileEntityState) : NetworkedTileEntity(blockStat
             ::openWindow
         )
 
-        override val gui: GUI = GUIBuilder(GUIType.NORMAL)
+        override val gui: Gui = GuiBuilder(GuiType.NORMAL)
             .setStructure(
                 "1 - - - - - - - 2",
                 "| s u # # # # e |",
